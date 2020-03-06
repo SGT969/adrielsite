@@ -1,0 +1,224 @@
+<!doctype html>
+    <head>
+            <title> Tarefa 1 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        Atividade 1:
+        <form name="Media_alunos">
+     
+            <h1> Sistema Trimestral</h1>
+
+            <p class="Nota 1">
+                <input type="text" id="nota0" placeholder="Insira aqui" required="required" name="nota1" />
+                <label for="nota1">Nota 1</label>
+            </p>
+            <p class="Nota 2">
+                <input type="text" id="nota1" placeholder="Insira aqui" name="nota2" />
+                <label for="nota2">Nota 2</label>
+     
+            </p>
+            <p>
+                <input type="text" id="nota2" placeholder="Insira aqui" name="nota3" />
+                <label for="nota3">Nota 3</label>
+            </p>
+            <p class="submit">
+                <input type="submit" onclick="Enviar();" value="Enviar" />
+            </p>
+        
+        
+
+                <script type="text/javascript">
+                    //Atividade 2
+                    var n1,n2,n3;
+                    var q1,q2,q3; // Essas variáveis representam o quadrado de cada valor.
+
+                        n1= prompt("Insira um número aqui: ");
+                        n1= eval (n1);
+        
+                        n2= prompt("Insira um número aqui: ");
+                        n2= eval (n2);
+
+                        n3= prompt("Insira um número aqui: ");
+                        n3= eval (n3);
+        
+                    q1= (n1*n1);
+                    q2= (n2*n2);
+                    q3= (n3*n3);
+
+                    document.write("<br>");
+                        document.write("O quadrado do primeiro valor é: " + q1 + " O do segundo valor é: " + q2 + " O do terceiro valor é: " + q3);
+                    </script>
+                <script type="text/javascript">
+                    //Atividade 3
+                    var n1,n2,n3;
+
+                        n1= prompt("Insira aqui um valor: ");
+                        n1= eval(n1);
+
+                        n2= prompt("Insira aqui um valor: ");
+                        n2= eval(n2);
+
+                        n3= prompt("Insira aqui um valor: ");
+                        n3= eval(n3);  
+
+                        document.write("<br>");
+                    if (n1>n2) {
+                        document.write("O primeiro valor é o maior");
+                    }  else {
+                        if (n2>n3) {
+                            document.write("O segundo valor é o maior");
+                        }
+                            else {
+                                document.write("O terceiro valor é o maior");
+                            }
+                    }
+                    document.write("<br>");
+                    </script>
+                 <script type="text/javascript">
+                // Atividade 4
+                function verificarDados(){
+                
+                var altura = document.getElementById("txtAltura").value;
+                var sexo = document.getElementById("txtSexo").value;
+                
+                altura = altura.split(",");
+                sexo = sexo.split(",");
+                var masculino = 0;
+                var feminino = 0;
+                var maiorAltura = parseFloat(altura[0]);
+                var sexoMaiorAltura = sexo[0];
+                for(i=0;i<sexo.length;i++){
+                    if(sexo[i] == "m"){
+                        masculino++;
+                    }else if(sexo[i] == "f"){
+                        feminino++;
+                    }
+                    
+                    if(parseFloat(altura[i]) > maiorAltura){
+                        maiorAltura = parseFloat(altura[i]);
+                        sexoMaiorAltura = sexo[i];
+                    }
+                }
+                
+                document.write("Masculino: "+masculino+" - Feminino: "+feminino+"<br>");
+                document.write("A maior altura é "+maiorAltura+" e pertence ao sexo "+sexoMaiorAltura);
+            }
+
+                </script>
+            
+            Altura<input type="text" id="txtAltura">
+            <br>
+            Sexo<input type="text" id="txtSexo">
+                    <input type="button" value="Verificar" onclick="verificarDados()">
+
+                    <script type="text/javascript">
+                    //Atividade 5
+                    var dia,ano,mes;
+
+                        dia= prompt("Insira o dia atual em forma numérica: ");
+                        dia= eval(dia);
+
+                        mes= prompt("Insira o mes atual, (Exemplo: Maio = 05): ");
+                        mes= eval(mes);
+
+                        ano= prompt("Insira o ano atual em forma numérica: ");
+                        ano= eval(ano);
+                        
+                        document.write("<br>");
+                        document.write( " A data atual é Dia: " + dia + ", Mês: " + mes + ", Ano: " + ano + "."); 
+                        document.write("<br>");
+                        document.write("<br>");
+                    </script>
+            Atividade 6:
+            <input type="text" id="num1" onblur="calcular();" />
+                <input type="text" id="num2" onblur="calcular();" />
+                    <span id="resultado"></span>
+        
+        <script type="text/javascript">
+        //Atividade 6
+                  function calcular() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var elemResult = document.getElementById("resultado");
+
+        if (elemResult.textContent === undefined) {
+            elemResult.textContent = "O resultado é " + String(num1 + num2) + ".";
+        }
+            else { // IE
+            elemResult.innerText = "O resultado é " + String(num1 + num2) + ".";
+            }
+        }    
+                    </script>
+
+                    <script type="text/javascript">
+                    //Atividade 7
+                    var C,F,N;
+
+                        F= prompt("Insira aqui a temperatura atual em Fahrenheit: ");
+                        F= eval(F);
+
+                        C = ((F - 32) * 5)/9;
+
+                    document.write("<br>");
+                    document.write("<br>");
+                        document.write("A temperatura em Celsius atual é: " + C + ".");
+                    
+                    </script>
+                Atividade 8:
+                <button onclick="funcaoParaExecutar(0,50)">Randomico</button>
+
+                <script type="text/javascript">
+            //Atividade 8
+            function funcaoParaExecutar(min,max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                    document.write(Math.floor(Math.random() * (0 + 50 + 1)) + min);
+            }
+
+                </script>
+                Atividade 9:
+                    <br>
+                    Insira aqui um valor de 0 a 14:
+            </br>
+                    
+                    <input type="text" id="num"/>
+                    <input type="submit" onclick="Hm(result)" value="Pressione"/>
+                    <span id="result"></span>
+        
+        <script type="text/javascript">
+        //Atividade 9
+                  function Hm(result) {
+            var num = Number(document.getElementById("num").value);
+            var elemResult = document.getElementById("result");
+
+        if ( num <=9) {
+            elemResult.textContent = "Insuficiente";
+        }
+            else 
+                if ( num <=13) {
+            elemResult.innerText = "Bom";
+            }   else {
+                    elemResult.innerText = "Muito Bom";
+            
+            }
+        }    
+        </script>
+        Atividade 10:
+        <br>
+        <input type="text" id="numb"/>
+            <input type="submit" onclick="Ata(fim)" value="Finalizar"/>
+                <span id="fim"></span>
+                    </br>
+            <script type="text/javascript">
+                //Atiidade 10
+                function Ata(fim) {
+            var numb = Number(document.getElementById("numb").value);
+            var elemResult = document.getElementById("fim");
+
+                alert(elemResult = + numb);
+                }
+            </script>
+
+        </body>
+            </html> 
